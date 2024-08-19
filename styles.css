@@ -13,8 +13,6 @@
   --welcome-dark: rgba(0, 45, 135, .8);
   --projects-light: rgb(215, 230, 255);
   --projects-dark: rgb(20, 60, 140);
-  /* --contact-light: rgb(255, 170, 60);
-  --contact-dark: rgb(255, 145, 0); */
   --contact-light: rgb(170, 200, 255);
   --contact-dark: rgb(0, 40, 130);
   --footer-light: rgb(170, 190, 230);
@@ -25,9 +23,26 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 3rem;
   font-family: Rubik, sans-serif;
-  font-size: 20px;
-  /* Replace with @media */
-  min-width: 650px;
+}
+
+@media (min-width: 650px) {
+  html {
+    font-size: 20px;
+  }
+
+  img.project-tile {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 649px) {
+  html {
+    font-size: 16px;
+  }
+
+  img.project-tile {
+    max-width: 400px;
+  }
 }
 
 a {
@@ -125,11 +140,11 @@ section#projects {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 15px 20px;
 }
 
 img.project-tile {
-  max-width: 400px;
+  /* max-width: 400px; */
   border-radius: 1rem;
   box-shadow: 0 2px 4px black;
   transition: ease-in-out .1s;
@@ -142,8 +157,8 @@ img.project-tile:hover {
 
 #projects > h2 {
   text-decoration: underline;
-  text-underline-offset: .75rem;
-  padding-bottom: .75rem;
+  text-underline-offset: .55rem;
+  padding-bottom: .55rem;
 }
 
 #contact {
