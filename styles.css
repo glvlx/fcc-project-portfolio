@@ -11,8 +11,14 @@
   --header-dark: rgb(0, 45, 135);
   --welcome-light: rgb(195, 215, 255);
   --welcome-dark: rgba(0, 45, 135, .8);
-  --projects-light: rgb(225, 215, 255);
-  --projects-dark: rgb(60, 20, 190);
+  --projects-light: rgb(215, 230, 255);
+  --projects-dark: rgb(20, 60, 140);
+  /* --contact-light: rgb(255, 170, 60);
+  --contact-dark: rgb(255, 145, 0); */
+  --contact-light: rgb(170, 200, 255);
+  --contact-dark: rgb(0, 40, 130);
+  --footer-light: rgb(170, 190, 230);
+  --footer-dark: rgb(20, 30, 60);
 }
 
 html {
@@ -21,7 +27,7 @@ html {
   font-family: Rubik, sans-serif;
   font-size: 20px;
   /* Replace with @media */
-  min-width: 500px;
+  min-width: 650px;
 }
 
 a {
@@ -31,11 +37,20 @@ a {
 
 h1, h2, .header-description {
   text-align: center;
+}
+
+h1 {
   margin-bottom: 10px;
 }
 
 h2 {
+  text-align: center;
   font-size: 2rem;
+  margin-bottom: .5ch;
+}
+
+p {
+  margin-bottom: 1.2ch;
 }
 
 .header-description {
@@ -55,7 +70,7 @@ h2 {
   color: var(--header-dark);
   background: var(--header-light);
   height: 3rem;
-  opacity: .9;
+  z-index: 100;
 }
 
 .navbar {
@@ -67,6 +82,7 @@ h2 {
 .navbar a {
   padding: .5rem .75rem;
   border-radius: 2rem;
+  transition: ease-in-out .1s;
 }
 
 .navbar a:hover {
@@ -74,8 +90,12 @@ h2 {
   background: var(--header-dark);
 }
 
-section, footer {
-  padding: 20px 10px;
+section {
+  padding: 30px 15px;
+}
+
+footer {
+  padding: 30px 15px 15px;
 }
 
 section#welcome-section {
@@ -105,28 +125,58 @@ section#projects {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  gap: 1.25rem;
 }
 
 img.project-tile {
   max-width: 400px;
   border-radius: 1rem;
+  box-shadow: 0 2px 4px black;
+  transition: ease-in-out .1s;
+}
+
+img.project-tile:hover {
+  transform: scale(1.01);
+  z-index: -1;
 }
 
 #projects > h2 {
   text-decoration: underline;
-  text-underline-offset: .5rem;
-  margin-bottom: .8rem;
+  text-underline-offset: .75rem;
+  padding-bottom: .75rem;
 }
 
-section#contact {
-  background: orange;
+#contact {
+  background: var(--contact-light);
 }
 
-footer {
-  background: yellowgreen;
+.icon-gallery {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: fit-content;
 }
 
 i {
   font-size: 2rem;
   text-align: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: ease-in-out .1s;
+}
+
+i:hover {
+  background-color: var(--contact-dark);
+  color: var(--contact-light);
+}
+
+footer {
+  text-align: center;
+  font-style: italic;
+  font-weight: 450;
+  color: var(--footer-light);
+  background-color: var(--footer-dark);
 }
