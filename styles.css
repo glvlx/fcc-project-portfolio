@@ -41,6 +41,7 @@ html {
   }
 
   img.project-tile {
+    width: 80vw;
     max-width: 400px;
   }
 }
@@ -144,7 +145,6 @@ section#projects {
 }
 
 img.project-tile {
-  /* max-width: 400px; */
   border-radius: 1rem;
   box-shadow: 0 2px 4px black;
   transition: ease-in-out .1s;
